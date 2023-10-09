@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <header>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <nav>
         <a href="index.html" accesskey="p" tabindex="1">Principal</a>
@@ -24,8 +25,8 @@
         <a href="sobremi.html" accesskey="s" tabindex="5">Sobre mi</a>
         <a href="viajes.html" accesskey="v" tabindex="7">Viajes</a>
     </nav>
-    <header>
     <h1>EscritorioVirtual</h1>
+    </header>
     <h2>Sobre mí</h2>
     <strong>Nombre:</strong>
     <p>Sara</p>
@@ -37,15 +38,14 @@
     <p>uo288195@uniovi.es</p>
     <strong>Presentación:</strong>
     <p>Nací en Gijón el 17 de Junio de 2003, mis padres se conocieron haciendo esta carrera pero no la terminaron, espero no seguir su ejemplo.</p>
-    <strong>Foto personal</strong>
+    <p><strong>Foto personal</strong></p>
     <picture>
         <source srcset="multimedia/imagenes/mifoto_moviles.png" media = "(max-width: 465px)">
         <source srcset="multimedia/imagenes/mifoto_tablets.png" media = "(max-width: 799px)">
         <img src= "multimedia/imagenes/mifoto_monitores.png" alt="Foto personal en la que aparezco yo en clase">
     </picture>
-    </header>
     <main>
-    <article>
+    <section>
         <h2>Más cosas sobre mí:</h2>
         <h3>Aficiones</h3>
         <ul>
@@ -67,6 +67,10 @@
                 </ol>
             </li>
         </ul>
+        <video controls src = "multimedia/video/juegos_mesa.mp4"></video>
+        <p>Otro de mis hobbies es jugar a juegos de mesa con mis amigos y familia, aquí hay algunos divertidos</p>
+        <video controls src= "multimedia/video/receta.webm"></video>
+        <p>Aquí hay un vídeo en otro formato, este es sobre una receta corta porque también me gusta mucho cocinar</p>
         <h3>Gustos musicales</h3>
         <ol>
             <li>Extremoduro</li>
@@ -75,6 +79,19 @@
             <li>Sabina</li>
             <li>Kiko Veneno</li>
         </ol>
+        <img src= "multimedia/imagenes/imagen_ROBE.jfif" alt="Foto de ROBE en un concierto">
+        <p>ROBE - Cantante de Extremoduro</p>
+        <a href="https://www.robe.es/inicio">Página de ROBE</a>
+        <p>La web de mi cantante favorito</p>
+        <p><strong>Canciones que me gustan:</strong></p>
+        <audio controls>
+            <source src = "multimedia/audio/contra_todos.mp3">
+        </audio>
+        <p>Mi canción favorita</p>
+        <audio controls>
+            <source src = "multimedia/audio/cuando_cae_la_luna.wav">
+        </audio>
+        <p>Otra canción que también me gusta, con otro formato</p>
         <h3>Asignaturas que más me han gustado</h3>
         <dl>
             <dt>AMD</dt>
@@ -88,8 +105,11 @@
             <dt>CN</dt>
             <dd>Me gustan las matemáticas y me resulto una aproximación interesante</dd>
         </dl>
-    </article>
-
+        <p>Con esta herramienta me organizo en la universidad:</p>
+        <a href="https://www.notion.so/">Libreta Online</a>
+        
+    </section>
+    <aside>
     <table>
         <caption>Las temperaturas medias de Gijón en los últimos 10 años</caption>
         <tbody>
@@ -119,34 +139,7 @@
             </tr>
         </tbody>
     </table>
+    </aside>
     </main>
-    <footer>
-    <h2>Enlaces externos</h2>
-    <a href="https://www.robe.es/inicio">Página de ROBE</a>
-    <p>La web de mi cantante favorito</p>
-    <a href="https://www.notion.so/">Libreta Online</a>
-    <p>Mi web favorita</p>
-
-    <h2>Contenido Multimedia</h2>
-    <h3>Imágenes</h3>
-    <img src= "multimedia/imagenes/imagen_ROBE.jfif" alt="Foto de ROBE en un concierto">
-    <p>ROBE</p>
-    <h3>Audio</h3>
-    <audio controls>
-        <source src = "multimedia/audio/contra_todos.mp3">
-    </audio>
-    <p>Mi canción favorita</p>
-    <audio controls>
-        <source src = "multimedia/audio/cuando_cae_la_luna.wav">
-    </audio>
-    <p>Otra canción que también me gusta, con otro formato</p>
-    <h3>Vídeo</h3>
-    <video controls src = "multimedia/video/juegos_mesa.mp4"></video>
-    <p>Otro de mis hobbies es jugar a juegos de mesa con mis amigos y familia, aquí hay algunos divertidos</p>
-    <video controls src= "multimedia/video/receta.webm"></video>
-    <p>Aquí hay un vídeo en otro formato, este es sobre una receta corta porque también me gusta mucho cocinar</p>
-    
-    </footer>
-
 </body>
 </html>
