@@ -4,12 +4,10 @@
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
-    <title>Sobre mí</title>
+    <title>EscritorioVirtual - Sobre mí</title>
     <meta name ="author" content ="Sara Fernández González" />
-    <meta name ="description" content ="aquí cada documento debe tener la
-                                descripción del contenido concreto del mismo" />
-    <meta name ="keywords" content ="aquí cada documento debe tener la lista
-                                de las palabras clave del mismo separadas por comas" />
+    <meta name ="description" content ="Esta es una página en la que doy información personal y muestro contenidos que me gustan o interesan" />
+    <meta name ="keywords" content ="Personal, Aficiones, Presentación" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="multimedia/imagenes/favicon.ico">
@@ -18,27 +16,28 @@
 <body>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <nav>
-        <a href="index.html" accesskey="p" tabindex="0">Principal</a>
-        <a href="agenda.html" accesskey="a" tabindex="1">Agenda</a>
-        <a href="juegos.html" accesskey="j" tabindex="2">Juegos</a>
-        <a href="meteorologia.html" accesskey="m" tabindex="3">Meteorologia</a>
-        <a href="noticias.html" accesskey="n" tabindex="4">Noticias</a>
+        <a href="index.html" accesskey="p" tabindex="1">Principal</a>
+        <a href="agenda.html" accesskey="a" tabindex="2">Agenda</a>
+        <a href="juegos.html" accesskey="j" tabindex="3">Juegos</a>
+        <a href="meteorologia.html" accesskey="m" tabindex="4">Meteorologia</a>
+        <a href="noticias.html" accesskey="n" tabindex="5">Noticias</a>
         <a href="sobremi.html" accesskey="s" tabindex="5">Sobre mi</a>
-        <a href="viajes.html" accesskey="v" tabindex="6">Viajes</a>
+        <a href="viajes.html" accesskey="v" tabindex="7">Viajes</a>
     </nav>
     <header>
-    <h1>Esta es una página sobre mí</h1>
-    <h3>Nombre</h3>
+    <h1>EscritorioVirtual</h1>
+    <h2>Sobre mí</h2>
+    <strong>Nombre:</strong>
     <p>Sara</p>
-    <h3>Apellidos</h3>
+    <strong>Apellidos:</strong>
     <p>Fernández González</p>
-    <h3>UO</h3>
+    <strong>UO:</strong>
     <p>UO288195</p>
-    <h3>Correo Electrónico</h3>
+    <strong>Correo Electrónico:</strong>
     <p>uo288195@uniovi.es</p>
-    <h3>Presentación</h3>
+    <strong>Presentación:</strong>
     <p>Nací en Gijón el 17 de Junio de 2003, mis padres se conocieron haciendo esta carrera pero no la terminaron, espero no seguir su ejemplo.</p>
-    <h3>Foto personal</h3>
+    <strong>Foto personal</strong>
     <picture>
         <source srcset="multimedia/imagenes/mifoto_moviles.png" media = "(max-width: 465px)">
         <source srcset="multimedia/imagenes/mifoto_tablets.png" media = "(max-width: 799px)">
@@ -47,8 +46,7 @@
     </header>
     <main>
     <article>
-        <h2>Listas</h2>
-        <section>
+        <h2>Más cosas sobre mí:</h2>
         <h3>Aficiones</h3>
         <ul>
             <li>Programación</li>
@@ -69,8 +67,6 @@
                 </ol>
             </li>
         </ul>
-        </section>
-        <section>
         <h3>Gustos musicales</h3>
         <ol>
             <li>Extremoduro</li>
@@ -79,73 +75,63 @@
             <li>Sabina</li>
             <li>Kiko Veneno</li>
         </ol>
-        </section>
-        <section>
         <h3>Asignaturas que más me han gustado</h3>
         <dl>
-            <dt>Primer Curso</dt>
-            <dd>AMD</dd>
-            <dt>Segundo Curso</dt>
-            <dd>TEC</dd>
-            <dd>Computabilidad</dd>
-            <dd>CPM</dd>
-            <dd>CN</dd>
+            <dt>AMD</dt>
+            <dd>Era interesante ver cómo un compilador entiende el texto</dd>
+            <dt>TEC</dt>
+            <dd>Fue una asignatura diferente a las demás</dd>
+            <dt>Computabilidad</dt>
+            <dd>Suponía un desafío tener que resolver razonamientos complejos</dd>
+            <dt>CPM</dt>
+            <dd>Ha sido la asignatura que más útil me ha parecido de momento</dd>
+            <dt>CN</dt>
+            <dd>Me gustan las matemáticas y me resulto una aproximación interesante</dd>
         </dl>
-        </section>
     </article>
 
-    <article>
-    <h3>Tabla</h3>
     <table>
         <caption>Las temperaturas medias de Gijón en los últimos 10 años</caption>
-        <thead>
-            <tr>
-                <th>2022</th>
-                <th>2021</th>
-                <th>2020</th>
-                <th>2019</th>
-                <th>2018</th>
-                <th>2017</th>
-                <th>2016</th>
-                <th>2015</th>
-                <th>2014</th>
-                <th>2013</th>
-            </tr>
-        </thead>
         <tbody>
             <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
-                <td>1</td>
+                <th scope = "col" id = "2022">2022</th>
+                <th scope = "col" id = "2021">2021</th>
+                <th scope = "col" id = "2020">2020</th>
+                <th scope = "col" id = "2019">2019</th>
+                <th scope = "col" id = "2018">2018</th>
+                <th scope = "col" id = "2017">2017</th>
+                <th scope = "col" id = "2016">2016</th>
+                <th scope = "col" id = "2015">2015</th>
+                <th scope = "col" id = "2014">2014</th>
+                <th scope = "col" id = "2013">2013</th>
+            </tr>
+            <tr>
+                <td headers="2022">16.3</td>
+                <td headers="2021">17.2</td>
+                <td headers="2020">15.9</td>
+                <td headers="2019">16.5</td>
+                <td headers="2018">15.3</td>
+                <td headers="2017">16.1</td>
+                <td headers="2016">17.4</td>
+                <td headers="2015">14.9</td>
+                <td headers="2014">15.2</td>
+                <td headers="2013">14.8</td>
             </tr>
         </tbody>
     </table>
-    </article>
     </main>
     <footer>
-    <h3>Enlaces externos</h3>
-    <dl>
-        <dt><a href="https://www.robe.es/inicio">Página de ROBE</a></dt>
-        <dd>La web de mi cantante favorito</dd>
-        <dt><a href="https://www.notion.so/">Libreta Online</a></dt>
-        <dd>Mi web favorita</dd>
-    </dl>
+    <h2>Enlaces externos</h2>
+    <a href="https://www.robe.es/inicio">Página de ROBE</a>
+    <p>La web de mi cantante favorito</p>
+    <a href="https://www.notion.so/">Libreta Online</a>
+    <p>Mi web favorita</p>
 
-    <h3>Contenido Multimedia</h3>
-    <section>
-    <h5>Imágenes</h5>
+    <h2>Contenido Multimedia</h2>
+    <h3>Imágenes</h3>
     <img src= "multimedia/imagenes/imagen_ROBE.jfif" alt="Foto de ROBE en un concierto">
     <p>ROBE</p>
-    </section>
-    <section>
-    <h5>Audio</h5>
+    <h3>Audio</h3>
     <audio controls>
         <source src = "multimedia/audio/contra_todos.mp3">
     </audio>
@@ -154,14 +140,12 @@
         <source src = "multimedia/audio/cuando_cae_la_luna.wav">
     </audio>
     <p>Otra canción que también me gusta, con otro formato</p>
-    </section>
-    <section>
-    <h5>Vídeo</h5>
+    <h3>Vídeo</h3>
     <video controls src = "multimedia/video/juegos_mesa.mp4"></video>
     <p>Otro de mis hobbies es jugar a juegos de mesa con mis amigos y familia, aquí hay algunos divertidos</p>
     <video controls src= "multimedia/video/receta.webm"></video>
     <p>Aquí hay un vídeo en otro formato, este es sobre una receta corta porque también me gusta mucho cocinar</p>
-    </section>
+    
     </footer>
 
 </body>
