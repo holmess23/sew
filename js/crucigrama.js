@@ -21,6 +21,10 @@ class Crucigrama{
         this.start();
     }
 
+    cambiarModo(modo){
+        this.nivel = modo;
+    }
+
     start(){
         for(let i = 0; i < this.rows; i++){
             this.tablero[i] = [];
