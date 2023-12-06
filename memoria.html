@@ -4,21 +4,16 @@
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
-    <title>EscritorioVirtual - Agenda</title>
+    <title>EscritorioVirtual - Juegos</title>
     <meta name ="author" content ="Sara Fernández González" />
-    <meta name ="description" content ="aquí cada documento debe tener la
-                                descripción del contenido concreto del mismo" />
-    <meta name ="keywords" content ="aquí cada documento debe tener la lista
-                                de las palabras clave del mismo separadas por comas" />
+    <meta name ="description" content ="este es el juego de memoria" />
+    <meta name ="keywords" content ="juego, memoria, cartas" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/agenda.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/memoria.css" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="multimedia/imagenes/favicon.ico">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-     crossorigin="anonymous"></script>
-    <script src = "js/agenda.js"></script>
+    <script src="js/memoria.js"></script>
 </head>
 
 <body>
@@ -35,15 +30,21 @@
         <a href="viajes.html" accesskey="v" tabindex="7">Viajes</a>
     </nav>
     </header>
-    <main>
-    <h2>Agenda</h2>
-    <button onclick="agenda.getSchedule()">Click para visualizar la Agenda</button>
+    <h2>Memoria</h2>
+    <nav>
+        <p>Juegos: </p>
+        <a href="memoria.html" accesskey="i" tabindex="8">Memoria</a>
+        <a href="sudoku.html" accesskey="k" tabindex="9">Sudoku</a>
+        <a href="crucigrama.php" accesskey="c">Crucigrama</a>
+    </nav>
+    
+    
     <section>
-
+        <h2>Memory Game</h2>
     </section>
-    </main>
+
     <script>
-        const agenda = new Agenda();
+        const memoria = new Memoria();
     </script>
 
 </body>

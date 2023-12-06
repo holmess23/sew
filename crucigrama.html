@@ -1,0 +1,118 @@
+<?php 
+class Record{
+    public $server;
+    public $user;
+    public $pass;
+    public $dbname;
+
+    public function __construct(){
+        $this->server = "localhost";
+        $this->user = "DBUSER2023";
+        $this->pass = "DBPSWD2023";
+        $this->dbname = "records";
+    }
+
+    public function insert_record(){
+        $conn = new mysqli($this->server,$this->user,$this->pass,$this->dbname);
+        if($conn->connect_error){
+            die("Conexion fallida");
+        }
+
+        $nombre = $_POST['nombre'];
+        $apellidos = $_POST['apellidos'];
+        $nivel = $_POST['nivel'];
+        $tiempo = $_POST['tiempo']; 
+        $sql = "INSERT INTO registro (nombre, apellidos, nivel, tiempo) VALUES ('$nombre', '$apellidos', '$nivel', '$tiempo')";
+        
+        if ($conn->query($sql) === TRUE) {
+            echo "Los datos se han insertado correctamente en la base de datos";
+        } else {
+            echo "Error al insertar datos: " . $conn->error;
+        }
+        
+        $conn->close();
+    
+    }
+}
+?>
+<!DOCTYPE HTML>
+
+<html lang="es">
+<head>
+    <!-- Datos que describen el documento -->
+    <meta charset="UTF-8" />
+    <title>EscritorioVirtual - Juegos</title>
+    <meta name ="author" content ="Sara Fernández González" />
+    <meta name ="description" content ="este es el juego del crucigrama matemático" />
+    <meta name ="keywords" content ="juego, crucigrama, numeros" />
+    <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/crucigrama.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/botonera.css" />
+    <link rel="icon" type="image/vnd.microsoft.icon" href="multimedia/imagenes/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+     crossorigin="anonymous"></script>
+    <script src="js/crucigrama.js"></script>
+</head>
+
+<body>
+    <header>
+    <h1>EscritorioVirtual</h1>
+    <!-- Datos con el contenidos que aparece en el navegador -->
+    <nav>
+        <a href="index.html" accesskey="p" tabindex="1">Principal</a>
+        <a href="agenda.html" accesskey="a" tabindex="2">Agenda</a>
+        <a href="juegos.html" accesskey="j" tabindex="3">Juegos</a>
+        <a href="meteorologia.html" accesskey="m" tabindex="4">Meteorologia</a>
+        <a href="noticias.html" accesskey="n" tabindex="5">Noticias</a>
+        <a href="sobremi.html" accesskey="s" tabindex="5">Sobre mi</a>
+        <a href="viajes.html" accesskey="v" tabindex="7">Viajes</a>
+    </nav>
+    </header>
+    <h2>Crucigrama</h2>
+    <nav>
+        <p>Juegos: </p>
+        <a href="memoria.html" accesskey="i" tabindex="8">Memoria</a>
+        <a href="sudoku.html" accesskey="k" tabindex="9">Sudoku</a>
+        <a href="crucigrama.php" accesskey="c">Crucigrama</a>
+    </nav>
+    
+    <main></main>
+    <section data-type="botonera">
+    <script>
+        const crucigrama = new Crucigrama();
+    </script>
+    <h2>Botonera</h2>
+    <button onclick="crucigrama.introduceElementButton(1)">1</button>
+    <button onclick="crucigrama.introduceElementButton(2)">2</button>
+    <button onclick="crucigrama.introduceElementButton(3)">3</button>
+    <button onclick="crucigrama.introduceElementButton(4)">4</button>
+    <button onclick="crucigrama.introduceElementButton(5)">5</button>
+    <button onclick="crucigrama.introduceElementButton(6)">6</button>
+    <button onclick="crucigrama.introduceElementButton(7)">7</button>
+    <button onclick="crucigrama.introduceElementButton(8)">8</button>
+    <button onclick="crucigrama.introduceElementButton(9)">9</button>
+    <button onclick="crucigrama.introduceElementButton('*')">*</button>
+    <button onclick="crucigrama.introduceElementButton('+')">+</button>
+    <button onclick="crucigrama.introduceElementButton('-')">-</button>
+    <button onclick="crucigrama.introduceElementButton('/')">/</button>
+    </section>
+    <aside></aside>
+    <script>
+    $(document).ready(function() {
+        crucigrama.paintMathword();
+    });
+    $(document).keydown(function(event) {
+        const selected = $('main > p[data-state="clicked"]');
+
+        if (selected.length > 0 && ((event.key >= '1' && event.key <= '9') || event.key == '+' || event.key == '-' || event.key == '*' || event.key == '/')) {
+            selected.attr('data-state', ' ');
+            crucigrama.introduceElement(selected, event.key);
+        }
+    });
+    </script>
+
+</body>
+</html>

@@ -12,11 +12,17 @@
                                 de las palabras clave del mismo separadas por comas" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="multimedia/imagenes/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script src="js/noticias.js"></script>
 </head>
 
 <body>
     <header>
+    <h1>EscritorioVirtual</h1>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <nav>
         <a href="index.html" accesskey="p" tabindex="1">Principal</a>
@@ -27,10 +33,23 @@
         <a href="sobremi.html" accesskey="s" tabindex="5">Sobre mi</a>
         <a href="viajes.html" accesskey="v" tabindex="7">Viajes</a>
     </nav>
-    <h1>EscritorioVirtual</h1>
     </header>
     <h2>Noticias</h2>
-    <p>En desarrollo</p>
+    
+    <script>
+        const noticias = new Noticias();
+    </script>
+    <main>
+        <input type="file" id="fileInput">
+        <button onclick="noticias.readInputFile(document.getElementById('fileInput'))">Leer Archivo</button>
+        <section></section>
+        <p>Escribe titular, 2 subtítulos y tu nombre para añadir una noticia.</p>
+        <input type="text"/>
+        <input type="text"/>
+        <input type="text"/>
+        <input type="text"/>
+        <button onclick="noticias.addNew()">Añadir noticia</button>
+    </main>
 
 </body>
 </html>

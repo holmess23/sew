@@ -1,0 +1,25 @@
+/*Sara Fernández González UO288195*/
+
+/*Especificidad 001*/
+section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin:0;
+    padding: 0;
+    width: 70%;
+    gap: 1em;
+}
+
+/*Especificidad 002*/
+section > article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #05445E;
+    margin:0;
+    padding: 0;
+}
+
+section > article > h3{
+    margin: 0.5em;
+}

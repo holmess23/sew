@@ -1,1 +1,135 @@
 /*Sara Fernández González UO288195*/
+
+/*
+Baby Blue #D4F1F4
+Blue Grotto #126778
+Navy Blue #05445E
+Seafoam Green #2F5233
+*/
+
+/*Especificidad 001*/
+body{
+    font-family: Consolas, monospace;
+    background-color: #D4F1F4;
+    color: #05445E;
+    width: 100%;
+}
+
+/*Especificidad 001*/
+h1{
+    /*hereda font-family de body Consolas, monospace*/
+    font-size: 300%; 
+    font-weight: 600; 
+}
+
+/*Especificidad 001*/
+h2{
+    font-size: 150%; 
+    font-weight: 600; 
+    color: #126778;
+}
+
+/*Especificidad 001*/
+h3{
+    font-size: 100%; 
+    font-weight: 600; 
+}
+
+/*Especificidad 001*/
+p { font-size: 90%; 
+    font-style: normal;
+    font-weight: 200; }
+
+/*Especificidad 001*/
+ul{ font-size: 100%; 
+    font-style: normal;
+    font-weight: 300; }
+
+/*Especificidad 012*/
+ul>li:nth-child(3){
+    font-style: italic;
+    color: #2F5233;
+}
+
+/*Especificidad 005*/
+ul>li>ol>li::marker{
+    content: "(" counter(list-item, lower-roman) ")";
+}
+
+/*Especificidad 001*/
+ol{ font-size: 100%; 
+    font-style: normal;
+    font-weight: 300; }
+
+/*Especificidad 001*/
+li{ font-size: 90%; 
+    font-style: normal;
+    font-weight: 200; }
+
+/*Especificidad 001*/
+dl{ font-size: 100%; 
+    font-style: normal;
+    font-weight: 400; }
+
+/*Especificidad 001*/
+dd{ font-size: 90%; 
+    font-style: normal;
+    font-weight: 200; } 
+
+/*Especificidad 001*/
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid #126778;
+  }
+
+/*Especificidad 013*/
+thead th:nth-child(even){
+    background-color:#05445E ;
+    color: #D4F1F4
+}
+
+/*Especificidad 013*/
+tbody td:nth-child(even){
+    background-color:#05445E ;
+    color: #D4F1F4
+}
+
+/*Especificidad 001*/
+th, td {
+    padding: 1%;
+}
+
+/*Especificidad 011*/
+a:link{
+    color: #05445E;
+}
+
+/*Especificidad 011*/
+a:visited{
+    color: #126778;
+}
+
+video{
+    width: 35%;
+}
+
+@media screen and (max-width: 600px){
+    /*Especificidad 010*/
+   .big_table{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px){
+    /*Especificidad 010*/
+    .small_table{
+        display:none;
+    }
+}
+
+
+
+
+

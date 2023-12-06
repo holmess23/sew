@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rutas xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns="http://tempuri.org/rutas">
+<ruta nombre="Ruta de Bali" tipo="Aventura" duracion="P7D">
+    <transporte medio="Avión" />
+    <inicio fecha="2023-12-01" hora="08:00:00">
+      <lugar>Aeropuerto Internacional Ngurah Rai</lugar>
+      <direccion dir = "Denpasar, Bali, Indonesia">
+        <coordenadas>115.16676278007215,-8.746741302020057,6</coordenadas>
+      </direccion>
+    </inicio>
+    <agencia>Bali Adventures</agencia>
+    <descripcion>Una emocionante aventura por la hermosa isla de Bali, llena de playas, templos y actividades emocionantes.</descripcion>
+    <personas_adecuadas>
+      <persona>familias con niños</persona>
+      <persona>personas mayores</persona>
+    </personas_adecuadas>
+    <referencias>
+      <referencia link="https://www.visitbali.id" />
+      <referencia link="https://www.baliadventures.com" />
+      <referencia link="https://es.wikipedia.org/wiki/Bali" />
+    </referencias>
+    <recomendacion>8</recomendacion>
+    <hitos>
+      <hito nombre="Playa de Kuta">
+        <coordenadas>115.16743180281938,-8.711479087169794,1</coordenadas>
+        <distancia>10.0</distancia>
+        <fotos>
+          <foto ref="res/fotos/kuta-beach.jpg" />
+        </fotos>
+      </hito>
+      <hito nombre="Templo de Uluwatu">
+        <coordenadas>115.0845772305687,-8.828569079280134,49</coordenadas>
+        <distancia>25.0</distancia>
+        <fotos>
+          <foto ref="res/fotos/templo-uluwatu.jpg" />
+        </fotos>
+      </hito>
+      <hito nombre="Reserva Natural Ubud">
+        <coordenadas>115.26076994690492,-8.518991770186211,187</coordenadas>
+        <distancia>40.0</distancia>
+        <fotos>
+          <foto ref="res/fotos/ubud.jpg" />
+        </fotos>
+      </hito>
+    </hitos>
+  </ruta>
+<ruta nombre="Aventura en Java" tipo="Aventura" duracion="P7D">
+    <transporte medio="Tren">Viaje en tren a Yogyakarta</transporte>
+    <inicio>
+        <lugar>Estación de Tren Yogyakarta</lugar>
+        <direccion dir = "Estación de Tren Yogyakarta (Stasiun Tugu Yogyakarta) Jl. Mangkubumi No.1, Sosromenduran, Gedong Tengen Yogyakarta, Indonesia">
+            <coordenadas>110.36355931363988,-7.789089249498418,115</coordenadas>
+        </direccion>
+    </inicio>
+    <agencia>Java Explora</agencia>
+    <descripcion>Una emocionante aventura de 7 días explorando la isla de Java.</descripcion>
+    <personas_adecuadas>
+        <persona>Debido a la complejidad de la ruta, no se puede estimar personas adecuadas</persona>
+    </personas_adecuadas>
+      <referencias>
+        <referencia link="https://www.indonesia.travel/sg/en/destinations/java"></referencia>
+        <referencia link="https://www.borobudurpark.com"></referencia>
+        <referencia link="https://es.wikipedia.org/wiki/Monte_Bromo"></referencia>
+    </referencias>
+    <recomendacion>8</recomendacion>
+    <hitos>
+        <hito nombre="Templo de Borobudur">
+            <descripcion>El templo budista más grande del mundo.</descripcion>
+            <coordenadas>110.20370838005391,-7.607607932471842,264</coordenadas>
+            <distancia>40.0</distancia>
+            <fotos>
+                <foto ref="res/fotos/borobudur.jpg" />
+            </fotos>
+            <videos>
+            </videos>
+        </hito>
+        <hito nombre="Monte Bromo">
+            <descripcion>Volcán activo con vistas impresionantes al amanecer.</descripcion>
+            <coordenadas>112.95221840274385,-7.927426311289299,2154</coordenadas>
+            <distancia>120.0</distancia>
+            <fotos>
+                <foto ref="res/fotos/bromo.jpg" />
+            </fotos>
+            <videos>
+            </videos>
+        </hito>
+        <hito nombre="Palacio del Sultán, Yogyakarta">
+          <descripcion>El Palacio del Sultán, también conocido como Kraton Ngayogyakarta Hadiningrat, es la residencia del sultán y un importante centro cultural en Yogyakarta.</descripcion>
+          <coordenadas>110.36418163772989,-7.805093162302442,99</coordenadas>
+          <distancia>2.0</distancia>
+          <fotos>
+              <foto ref="res/fotos/palacio.jpg" />
+          </fotos>
+          <videos>
+          </videos>
+      </hito>
+    </hitos>
+</ruta>
+<ruta nombre="Ruta Cultural en Yogyakarta" tipo="Cultural" duracion="P4D">
+  <transporte medio="A pie">Vuelo internacional a Yogyakarta</transporte>
+  <inicio>
+      <lugar>Templo Prambanan</lugar>
+      <direccion dir = "Templo de Prambanan Jl. Raya Solo - Yogyakarta, Kranggan, Bokoharjo Kabupaten Sleman, Daerah Istimewa Yogyakarta, Indonesia">
+          <coordenadas>110.49148885307515,-7.7518717612196015,153</coordenadas>
+      </direccion>
+  </inicio>
+  <agencia>Descubre Yogyakarta Tours</agencia>
+  <descripcion>Un viaje cultural de 4 días explorando la rica herencia de Yogyakarta.</descripcion>
+  <personas_adecuadas>
+      <persona>Amantes de la historia</persona>
+      <persona>Entusiastas de la arquitectura</persona>
+  </personas_adecuadas>
+  <referencias>
+      <referencia link="https://www.descubreyogyakarta.com">Sitio web de la agencia</referencia>
+  </referencias>
+  <recomendacion>6</recomendacion>
+  <hitos>
+      <hito nombre="Templo Prambanan">
+          <descripcion>El impresionante templo hindú de Prambanan, un sitio de Patrimonio Mundial de la UNESCO.</descripcion>
+          <coordenadas>110.49148885307515,-7.7518717612196015,153</coordenadas>
+          <distancia>0</distancia>
+          <fotos>
+              <foto ref="res/fotos/prambanan.jpg" />
+          </fotos>
+          <videos>
+          </videos>
+      </hito>
+      <hito nombre="Palacio del Agua (Taman Sari)">
+          <descripcion>El Palacio del Agua, un complejo de baños reales y jardines acuáticos.</descripcion>
+          <coordenadas>110.35961708530911,-7.808703606543058,95</coordenadas>
+          <distancia>4.0</distancia>
+          <fotos>
+              <foto ref="res/fotos/tamansari.jpg" />
+          </fotos>
+          <videos>
+          </videos>
+      </hito>
+      <hito nombre="Museo Sonobudoyo">
+          <descripcion>Un museo que alberga una rica colección de arte y cultura javanesa.</descripcion>
+          <coordenadas>110.36369094414904,-7.801717195575762,103</coordenadas>
+          <distancia>1.0</distancia>
+          <fotos>
+              <foto ref="res/fotos/sonobudoyo.jpeg" />
+          </fotos>
+          <videos>
+          </videos>
+      </hito>
+  </hitos>
+</ruta>
+</rutas>

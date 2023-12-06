@@ -1,0 +1,49 @@
+/*Sara Fernández González UO288195*/
+
+/*Especificidad 001*/
+section{
+    width: 57%;
+    gap: 2em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*Especificidad 002*/
+section > article{
+    width: 20%;
+    background-color: #05445E;
+    color: #D4F1F4;
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+    justify-content: center;
+    transform: rotateY(0deg);
+}
+
+/*Especificidad 012*/
+section > article.flip{
+    transform: rotateY(180deg);
+}
+
+/*Especificidad 002*/
+section > h2{
+    width: 100%;
+    text-align: center;
+}
+
+/*Especificidad 003*/
+section > article > img{
+    /*width: 100%;
+    height: 100%;*/
+    width: 50%;
+    position: relative;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+}
+
+section > article > h3{
+    margin: 2em;
+    position: static;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+}

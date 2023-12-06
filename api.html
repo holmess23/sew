@@ -4,22 +4,19 @@
 <head>
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
-    <title>EscritorioVirtual - Viajes</title>
+    <title>EscritorioVirtual - Juegos</title>
     <meta name ="author" content ="Sara Fernández González" />
-    <meta name ="description" content ="aquí cada documento debe tener la
-                                descripción del contenido concreto del mismo" />
-    <meta name ="keywords" content ="aquí cada documento debe tener la lista
-                                de las palabras clave del mismo separadas por comas" />
+    <meta name ="description" content ="esta es una pagina de dibujos con sonido" />
+    <meta name ="keywords" content ="juego, dibujo, musica" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/viajes.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/api.css" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="multimedia/imagenes/favicon.ico">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
      crossorigin="anonymous"></script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAAQI2UyKNZGSMUD9fnAsg_UdFfS-_l-V4" ></script>
-    <script src="js/viajes.js"></script>
+    <script src="js/api.js"></script>
 </head>
 
 <body>
@@ -36,21 +33,15 @@
         <a href="viajes.html" accesskey="v" tabindex="7">Viajes</a>
     </nav>
     </header>
-    <h2>Viajes</h2>
+    <h2>API</h2>
+    
     <main>
-        
+        <canvas></canvas>
+        <button onclick="c.copyCanvas()">Guardar Canvas</button>
     </main>
-    
-    <aside>
-        <p>Introduce el XML</p>
-        <input id = "xmlInput" type = "file" onchange="viajes.readXMLFile(document.getElementById('xmlInput'))"/>
-        <p>Introduce los KML</p>
-        <input id = "kmlInput" type = "file" onchange = "viajes.readKMLFile(document.getElementById('kmlInput'))" multiple/>
-    </aside>
-    <footer></footer>
-    <script>const viajes = new Viajes();
+    <script>
+        const c = new Canvas();
     </script>
-    
 
 </body>
 </html>

@@ -11,11 +11,17 @@
                                 de las palabras clave del mismo separadas por comas" />
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" type="image/vnd.microsoft.icon" href="multimedia/imagenes/favicon.ico">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+     crossorigin="anonymous"></script>
+    <script src= "js/fondo.js"></script>
 </head>
 
 <body>
     <header>
+    <h1>EscritorioVirtual</h1>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <nav>
         <a href="index.html" accesskey="p" tabindex="1">Principal</a>
@@ -26,9 +32,33 @@
         <a href="sobremi.html" accesskey="s" tabindex="5">Sobre mi</a>
         <a href="viajes.html" accesskey="v" tabindex="7">Viajes</a>
     </nav>
-    <h1>EscritorioVirtual</h1>
     </header>
-    <p>En desarrollo</p>
+    <main></main>
+
+    <script>
+        const fondo = new Fondo("Indonesia", "Yakarta", "a");
+        const apiKey = 'f850b64a544c6b78f821eeef5b08dae1'; 
+
+        
+        const flickrAPI = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + apiKey + '&text=' + fondo.pais + '&format=json&nojsoncallback=1';
+
+        
+        $.ajax({
+            url: flickrAPI,
+            method: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                console.log(response.photos.photo.length);
+                if (response.photos && response.photos.photo.length > 0) {
+                    const photo = response.photos.photo[12];
+                    const imageUrl = `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}.jpg`;
+                    const $body = $('body');
+                    $body.css({'background-image': `url(${imageUrl})`,'background-repeat': 'no-repeat','background-size': 'cover'});
+                }
+            }
+        });
+    </script>
+    
 
 </body>
 </html>
