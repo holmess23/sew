@@ -76,17 +76,15 @@ class Record{
         <p>Juegos: </p>
         <a href="memoria.html" accesskey="i" tabindex="8">Memoria</a>
         <a href="sudoku.html" accesskey="k" tabindex="9">Sudoku</a>
-        <a href="crucigrama.php" accesskey="c">Crucigrama</a>
+        <a href="crucigrama.html" accesskey="c">Crucigrama</a>
     </nav>
     <script>
         const crucigrama = new Crucigrama();
     </script>
-    <button onclick="cambiarModo('facil')">Fácil</button>
-    <button onclick="cambiarModo('medio')">Medio</button>
-    <button onclick="cambiarModo('difícil')">Difícil</button>
-    <main>
-        
-    </main>
+    <button onclick="crucigrama.cambiarModo('facil')">Fácil</button>
+    <button onclick="crucigrama.cambiarModo('medio')">Medio</button>
+    <button onclick="crucigrama.cambiarModo('difícil')">Difícil</button>
+    <main></main>
     <section data-type="botonera">
     
     <h2>Botonera</h2>

@@ -23,6 +23,15 @@ class Crucigrama{
 
     cambiarModo(modo){
         this.nivel = modo;
+        this.board = this.facil.split(",");
+        if(this.nivel === 'medio'){
+            this.board = this.medio.split(",");
+        }else if(this.nivel === 'dificil'){
+            this.board = this.dificil.split(",");
+        }
+        $("main").empty();
+        this.start();
+        this.paintMathword();
     }
 
     start(){
