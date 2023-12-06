@@ -78,12 +78,16 @@ class Record{
         <a href="sudoku.html" accesskey="k" tabindex="9">Sudoku</a>
         <a href="crucigrama.php" accesskey="c">Crucigrama</a>
     </nav>
-    
-    <main></main>
-    <section data-type="botonera">
     <script>
         const crucigrama = new Crucigrama();
     </script>
+    <main>
+        <button onclick="cambiarModo('facil')">Fácil</button>
+        <button onclick="cambiarModo('medio')">Medio</button>
+        <button onclick="cambiarModo('difícil')">Difícil</button>
+    </main>
+    <section data-type="botonera">
+    
     <h2>Botonera</h2>
     <button onclick="crucigrama.introduceElementButton(1)">1</button>
     <button onclick="crucigrama.introduceElementButton(2)">2</button>
