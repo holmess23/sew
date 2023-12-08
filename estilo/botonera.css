@@ -24,7 +24,9 @@ section[data-type=botonera]{
         width: calc(15% - 1em);
         height: 4em;
         text-align: center;
+        font-size: 100%;
         background-color: #000;
         color: #FFF;
     }
 }
+
