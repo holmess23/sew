@@ -61,6 +61,12 @@ class Crucigrama{
             if (this.tablero[i][j] === 0) {
                 $parrafo.click(function() {
                     $(this).attr('data-state', 'clicked');
+                    $(this).click(function(){
+                        $(this).attr('data-state', ' ');
+                        $(this).click(function() {
+                            $(this).attr('data-state', 'clicked');
+                        });
+                    });
                 });
             } else if (this.tablero[i][j] === -1) {
                 $parrafo.attr('data-state', 'empty');
@@ -75,9 +81,9 @@ class Crucigrama{
     this.init_time = new Date();
     }
 
-    check_win_condition(){
-        for(let i = 0; i < this.columns; i++){
-            for(let j = 0; j < this.rows; j++){
+    checkWinCondition(){
+        for(let i = 0; i < this.rows; i++){
+            for(let j = 0; j < this.columns; j++){
                 if(this.tablero[i][j] === 0){
                     return false;
                 }
@@ -87,7 +93,7 @@ class Crucigrama{
         return true;
     }
 
-    calculate_date_difference() {
+    calculateDateDifference() {
         this.end_time = new Date();
         
         const difference = this.end_time.getTime() - this.init_time.getTime();
@@ -114,11 +120,24 @@ class Crucigrama{
             this.tablero[row][column] = 0;
         }
 
-        if(this.check_win_condition()){
-            alert("¡Enhorabuena! Tiempo: " + this.calculate_date_difference());
+        if(this.checkWinCondition()){
+            alert("¡Enhorabuena! Tiempo: " + this.calculateDateDifference());
             this.createRecordForm();
         }
         
+    }
+
+    cleanElement(){
+        const selected = $('main > p[data-state="clicked"]');
+        if (selected.length > 0) {
+            selected.attr('data-state', ' ');
+            const row = parseInt(selected.attr('grid-row-start'));
+            const column = parseInt(selected.attr('grid-column-start'));
+            this.tablero[row][column] = 0;
+            selected.text('');
+        }else{
+            //alert("No has seleccionado ninguna celda");
+        }
     }
 
     introduceElementButton(elem){
