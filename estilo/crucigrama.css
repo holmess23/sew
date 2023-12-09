@@ -23,7 +23,6 @@ main{
     }
     section[data-type="botonera"] {
         width: 100%;
-        box-sizing: border-box;
     }
 }
 
