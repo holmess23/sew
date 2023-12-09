@@ -32,6 +32,10 @@ section[data-type=botonera]{
 
 @media screen and (max-width: 600px){
 
+    section[data-type=botonera] {
+        display: block;
+    }
+
 section[data-type=botonera] button {
     width: calc(5% - 1em);
     height: 2em;
