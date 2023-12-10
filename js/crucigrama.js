@@ -18,6 +18,9 @@ class Crucigrama{
         this.end_time = 0;
         this.tablero = [];
         this.seconds = 0;
+
+        this.x = 0;
+        this.y = 0;
         this.start();
     }
 
@@ -118,6 +121,7 @@ class Crucigrama{
             selected.attr('data-state', 'correct');
         }else{
             this.tablero[row][column] = 0;
+            selected.attr('data-state', 'fail');
         }
 
         if(this.checkWinCondition()){
@@ -235,6 +239,35 @@ class Crucigrama{
         const iTiempo  = $('<p></p>').attr("name", "tiempo").text(this.seconds).appendTo(form);
 
         $('aside').append(form);
+    }
+
+    findNextSelected(){
+        const selected = $('main > p[data-state="clicked"]');
+
+        if (selected.length > 0) {
+            selected.attr('data-state', ' ');
+            this.x = parseInt(selected.attr('grid-row-start'));
+            this.y = parseInt(selected.attr('grid-column-start'));
+        }
+        var found = false;
+        for(let i = this.x; i < this.rows; i++){
+            for(let j = 0; j < this.columns; j++){
+                if(this.tablero[i][j] === 0 && !found){
+                    if(i === this.x){
+                        if(j > this.y){
+                            const toSelect = $(`main > p[grid-row-start="${i}"][grid-column-start="${j}"]`);
+                            toSelect.attr('data-state', 'clicked');
+                            found = true;
+                        }
+                    }else{
+                        const toSelect = $(`main > p[grid-row-start="${i}"][grid-column-start="${j}"]`);
+                        toSelect.attr('data-state', 'clicked');
+                        found = true;
+                    }
+                }
+            }
+        }
+
     }
 
     

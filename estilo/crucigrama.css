@@ -16,12 +16,12 @@ main{
     main{
         width: 50%;
     }
+    li[data-type = "ordenador"]{
+        display:none
+    }
 }
 @media screen and (max-width: 600px){
     main{
-        width: 100%;
-    }
-    section[data-type="botonera"] {
         width: 100%;
     }
 }
@@ -44,11 +44,6 @@ main > p{
 }
 
 /*Especificidad 012*/
-main > p.error{
-    background-color: rgb(246, 187, 187);
-}
-
-/*Especificidad 012*/
 main > p[data-state = "empty"]{
     background-color: #05445E ;
 }
@@ -57,11 +52,15 @@ main > p[data-state = "empty"]{
 main > p[data-state = "clicked"]{
     background-color: #6abecf ;
 }
+/*Especificidad 012*/
+main > p[data-state = "fail"]{
+    background-color: rgb(246, 187, 187);
+}
 
+section > ul > li{
+    font-size: 120%;
+}
 
-
-section[data-type="botonera"] {
-    width: 50%; /* O el ancho deseado para la sección */
-    float: right;
-    box-sizing: border-box;
+body > section > h3{
+    font-size: 120%;
 }

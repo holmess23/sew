@@ -3,6 +3,12 @@ section[data-type=botonera]{
     display: none;
 }
 
+section[data-type="botonera"] {
+    width: 50%; 
+    float: right;
+    box-sizing: border-box;
+}
+
 @media screen and (max-width: 800px){
         /* Estilos para una mediaquery
     que muestre la botonera en tablet y móvil */
@@ -24,7 +30,7 @@ section[data-type=botonera]{
         width: calc(15% - 1em);
         height: 4em;
         text-align: center;
-        font-size: 100%;
+        font-size: 150%;
         background-color: #000;
         color: #FFF;
     }
@@ -34,14 +40,17 @@ section[data-type=botonera]{
 
     section[data-type=botonera] {
         display: block;
+        float: none;
+        width: 100%;
     }
 
-section[data-type=botonera] button {
-    width: calc(5% - 1em);
-    height: 2em;
-    text-align: center;
-    font-size: 100%;
-    background-color: #000;
-    color: #FFF;
+    section[data-type=botonera] button {
+        width: 5%;
+        height: 2.5em;
+        text-align: center;
+        font-size: 150%;
+        background-color: #000;
+        color: #FFF;
+    }
 }
-}
+

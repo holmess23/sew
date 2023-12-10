@@ -45,11 +45,7 @@
     <script>
         const crucigrama = new Crucigrama();
     </script>
-    <section>
-    <button onclick="crucigrama.cambiarModo('facil')">Fácil</button>
-    <button onclick="crucigrama.cambiarModo('medio')">Medio</button>
-    <button onclick="crucigrama.cambiarModo('dificil')">Difícil</button>
-    </section>
+    
     <section>
         <h3>¿Como jugar?</h3>
         <ul>
@@ -58,7 +54,15 @@
             <li>No se pueden escribir números de 2 cifras, seguro que encuentras otra solución</li>
             <li>Para borrar un dato que has puesto, selecciona la casilla y dale a retroceso o al botón &lt;- de la botonera</li>
             <li>Ten cuidado y no clickes demasiadas veces sobre la misma casilla, un click basta</li>
+            <li data-type="ordenador">Si pulsas ENTER en el ordenador podrás pasar a la siguiente casilla vacía sin hacer click</li>
+            <li>Para empezar a jugar selecciona el nivel</li>
+            <li>Signos: + Suma, - resta, * multiplicación, \ división</li>
         </ul>
+    </section>
+    <section>
+        <button onclick="crucigrama.cambiarModo('facil')">Fácil</button>
+        <button onclick="crucigrama.cambiarModo('medio')">Medio</button>
+        <button onclick="crucigrama.cambiarModo('dificil')">Difícil</button>
     </section>
     <main></main>
     <section data-type="botonera">
@@ -81,7 +85,7 @@
     <aside></aside>
     <script>
     $(document).ready(function() {
-        crucigrama.paintMathword();
+        //crucigrama.paintMathword();
     });
     $(document).keydown(function(event) {
         const selected = $('main > p[data-state="clicked"]');
@@ -91,6 +95,8 @@
             crucigrama.introduceElement(selected, event.key);
         }else if(selected.length > 0 && (event.key == 'Backspace' || event.key == 'Delete')){
             crucigrama.cleanElement();
+        }else if (event.key === 'Enter') {
+            crucigrama.findNextSelected();
         }
     });
     </script>
