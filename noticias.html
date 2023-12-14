@@ -40,8 +40,8 @@
         const noticias = new Noticias();
     </script>
     <main>
-        <label for = "file">Subir noticia: </label>
-        <input id = "file" type="file" id="fileInput">
+        <label for = "fileInput">Subir noticia: </label>
+        <input type="file" id="fileInput">
         <button onclick="noticias.readInputFile(document.getElementById('fileInput'))">Leer Archivo</button>
         <section>
             <h2>Tablón de noticias:</h2>
