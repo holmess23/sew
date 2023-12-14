@@ -101,6 +101,7 @@ th, td {
     padding: 1%;
 }
 
+/*Con los colores de los link me da errores */
 /*Especificidad 011*/
 a:link{
     color: #05445E;
@@ -108,7 +109,7 @@ a:link{
 
 /*Especificidad 011*/
 a:visited{
-    color: #126778;
+    color: #0E505D;
 }
 
 /*Especificidad 001*/
