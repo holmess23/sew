@@ -59,8 +59,8 @@ class Crucigrama{
         for (let i = 0; i < this.rows; i++) {
             for(let j = 0; j < this.columns; j++){
             const $parrafo = $('<p></p>');
-            $parrafo.attr('grid-row-start', i);
-            $parrafo.attr('grid-column-start', j);
+            $parrafo.attr('data-x', i);
+            $parrafo.attr('data-y', j);
             if (this.tablero[i][j] === 0) {
                 $parrafo.click(function() {
                     $(this).attr('data-state', 'clicked');
@@ -111,8 +111,8 @@ class Crucigrama{
     }
 
     introduceElement(selected, elem){
-        const row = parseInt(selected.attr('grid-row-start'));
-        const column = parseInt(selected.attr('grid-column-start'));
+        const row = parseInt(selected.attr('data-x'));
+        const column = parseInt(selected.attr('data-y'));
         this.tablero[row][column] = elem;
         const expression_row = this.checkRow(row, column);
         const expresion_col = this.checkColumn(row, column);
@@ -135,8 +135,8 @@ class Crucigrama{
         const selected = $('main > p[data-state="clicked"]');
         if (selected.length > 0) {
             selected.attr('data-state', ' ');
-            const row = parseInt(selected.attr('grid-row-start'));
-            const column = parseInt(selected.attr('grid-column-start'));
+            const row = parseInt(selected.attr('data-x'));
+            const column = parseInt(selected.attr('data-y'));
             this.tablero[row][column] = 0;
             selected.text('');
         }else{
@@ -226,8 +226,8 @@ class Crucigrama{
         
     }
 
-    createRecordForm() {
-        const form = $('<form></form>');
+    /*createRecordForm() {
+        const form = $('<form method = "post"></form>').attr('data-type','formRecord');
         const pNombre = $('<p>Nombre</p>').appendTo(form);
         const iNombre = $('<input></input>').attr("name", "nombre").attr("type", "text").appendTo(form);
         const pApellidos = $('<p>Apellidos</p>').appendTo(form);
@@ -239,6 +239,20 @@ class Crucigrama{
         const iTiempo  = $('<p></p>').attr("name", "tiempo").text(this.seconds).appendTo(form);
 
         $('aside').append(form);
+    }*/
+
+    createRecordForm() {
+        const form = $('<form method = "POST"></form>');
+        const lNombre = $('<label for = "nombre">Nombre: </label>').appendTo(form);
+        const iNombre = $('<input id = "nombre" name = "nombre" type = "text"></input>').appendTo(form);
+        const lApellido = $('<label for = "apellido">Apellidos: </label>').appendTo(form);
+        const iApellido = $('<input id = "apellido" name = "apellido" type = "text"></input>').appendTo(form);
+        const lNivel = $('<label for = "nivel">Nivel: </label>').appendTo(form);
+        const iNivel = $('<input id = "nivel" name = "nivel" type = "text" value ="'+ this.nivel +'"></input>').appendTo(form);
+        const lTiempo = $('<label for = "tiempo">Tiempo: </label>').appendTo(form);
+        const iTiempo = $('<input id = "tiempo" name = "tiempo" type = "text" value ="'+ this.seconds +'"></input>').appendTo(form);
+        const submit = $('<input type = "submit" value = "Enviar"></input>').appendTo(form);
+        $('aside').append(form);
     }
 
     findNextSelected(){
@@ -246,8 +260,8 @@ class Crucigrama{
 
         if (selected.length > 0) {
             selected.attr('data-state', ' ');
-            this.x = parseInt(selected.attr('grid-row-start'));
-            this.y = parseInt(selected.attr('grid-column-start'));
+            this.x = parseInt(selected.attr('data-x'));
+            this.y = parseInt(selected.attr('data-y'));
         }
         var found = false;
         for(let i = this.x; i < this.rows; i++){
@@ -255,12 +269,12 @@ class Crucigrama{
                 if(this.tablero[i][j] === 0 && !found){
                     if(i === this.x){
                         if(j > this.y){
-                            const toSelect = $(`main > p[grid-row-start="${i}"][grid-column-start="${j}"]`);
+                            const toSelect = $(`main > p[data-x="${i}"][data-y="${j}"]`);
                             toSelect.attr('data-state', 'clicked');
                             found = true;
                         }
                     }else{
-                        const toSelect = $(`main > p[grid-row-start="${i}"][grid-column-start="${j}"]`);
+                        const toSelect = $(`main > p[data-x="${i}"][data-y="${j}"]`);
                         toSelect.attr('data-state', 'clicked');
                         found = true;
                     }
@@ -270,6 +284,18 @@ class Crucigrama{
 
     }
 
-    
+    insertRecord(formData){
+        $.ajax({
+            type: 'POST',
+            url: 'crucigrama.php',
+            data: formData,
+            success: function(response) {
+                //console.log(response);
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+    }
     
 }

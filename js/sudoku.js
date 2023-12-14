@@ -28,8 +28,8 @@ class Sudoku{
         for (let i = 0; i < this.rows; i++) {
           for (let j = 0; j < this.columns; j++) {
             const paragraph = document.createElement('p');
-            paragraph.setAttribute('grid-row-start', i);
-            paragraph.setAttribute('grid-column-start', j);
+            paragraph.setAttribute('data-x', i);
+            paragraph.setAttribute('data-y', j);
     
             if (this.board[i][j] === 0) {
               paragraph.addEventListener('click', () => {
@@ -50,11 +50,11 @@ class Sudoku{
     }
 
     introduceNumber(selected, number){
-        const row = selected.getAttribute('grid-row-start');
-        const column = selected.getAttribute('grid-column-start');
-        selected.textContent = number;
+        const row = selected.getAttribute('data-x');
+        const column = selected.getAttribute('data-y');
         if(this.checkRow(number, row) && this.checkColumn(number, column) && this.checkBox(number,row,column)){
             selected.classList.remove('error');
+            selected.textContent = number;
             this.board[row][column] = number;
             selected.setAttribute('data-state', 'correct');
             selected.removeEventListener('click', () => {

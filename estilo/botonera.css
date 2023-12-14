@@ -1,9 +1,8 @@
 /* Sara Fernández González UO288195*/
+
+/*Especificidad 011*/
 section[data-type=botonera]{
     display: none;
-}
-
-section[data-type="botonera"] {
     width: 50%; 
     float: right;
     box-sizing: border-box;
@@ -12,7 +11,7 @@ section[data-type="botonera"] {
 @media screen and (max-width: 800px){
         /* Estilos para una mediaquery
     que muestre la botonera en tablet y móvil */
-    
+    /*Especificidad 011*/
     section[data-type=botonera] {
         display: flex;
         gap: 0.3em;
@@ -21,11 +20,13 @@ section[data-type="botonera"] {
         flex-wrap: wrap;
     }
 
+    /*Especificidad 012*/
     section[data-type=botonera] h2 {
         width: 100%;
         text-align: center;
     }
 
+    /*Especificidad 012*/
     section[data-type=botonera] button {
         width: calc(15% - 1em);
         height: 4em;
@@ -38,17 +39,19 @@ section[data-type="botonera"] {
 
 @media screen and (max-width: 600px){
 
+    /*Especificidad 011*/
     section[data-type=botonera] {
         display: block;
         float: none;
         width: 100%;
     }
 
+    /*Especificidad 012*/
     section[data-type=botonera] button {
         width: 5%;
         height: 2.5em;
         text-align: center;
-        font-size: 150%;
+        font-size: 120%;
         background-color: #000;
         color: #FFF;
     }

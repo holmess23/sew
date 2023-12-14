@@ -40,8 +40,15 @@ class Pais{
         return this.religion;
     }
 
+    getPrimaryInfo(){
+        document.write("<h3>Información Primaria</h3>" + "<ul>"
+        + "<li><p>Nombre: " + this.nombre + "</p></li>"
+        + "<li><p>Capital: " + this.capital + "</p></li>"
+                    + "</ul>");
+    }
+
     getSecondaryInfo(){
-        document.write("<ul>"
+        document.write("<h3>Información Secundaria</h3>" + "<ul>"
         + "<li><p>Poblacion: " + this.poblacion + "</p></li>"
         + "<li><p>Gobierno: " + this.gobierno + "</p></li>"
         + "<li><p>Religion: " + this.religion + "</p></li>"

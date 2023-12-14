@@ -84,19 +84,19 @@ table {
     border: 3px solid #126778;
   }
 
-/*Especificidad 013*/
+/*Especificidad 012*/
 thead th:nth-child(even){
     background-color:#05445E ;
     color: #D4F1F4
 }
 
-/*Especificidad 013*/
+/*Especificidad 012*/
 tbody td:nth-child(even){
     background-color:#05445E ;
     color: #D4F1F4
 }
 
-/*Especificidad 001*/
+/*Especificidad 001 001*/
 th, td {
     padding: 1%;
 }
@@ -111,6 +111,7 @@ a:visited{
     color: #126778;
 }
 
+/*Especificidad 001*/
 video{
     width: 35%;
 }

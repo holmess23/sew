@@ -18,6 +18,7 @@ class Viajes{
       }
       this.fileAPIsupported = window.File && window.FileReader && window.FileList && window.Blob;
       this.coordinates = [];
+      this.imagenActual = 0;
     }
     
     onSuccess(position) {
@@ -73,8 +74,49 @@ class Viajes{
       reader.onload = function(event) {
         const contents = event.target.result;
         const adapted = adapt(contents);
-        $('aside').html(`<pre>${adapted}</pre>`);
-        
+        //$('aside').html(`<pre>${adapted}</pre>`);
+        $(contents).find('ruta').each(function() {
+          const nombre = $(this).attr('nombre');
+          const tipo = $(this).attr('tipo');
+          const fecha = $(this).find('inicio').attr('fecha');
+          const hora = $(this).find('inicio').attr('hora');
+          const inicio = $(this).find('inicio').find('lugar').text();
+          const agencia = $(this).find('agencia').text();
+          const descripcion = $(this).find('descripcion').text();
+          
+          const section = $('<section></section>');
+          const article = $('<article></article>');
+          const $nombre = $('<h3></h3>').text('Nombre de la Ruta: ' + nombre).appendTo(article);
+          const $tipo = $('<p></p>').text('Tipo de la Ruta: ' + tipo).appendTo(article);
+          if(fecha != undefined){
+            const $fecha = $('<p></p>').text('Fecha de inicio: ' + fecha + " Hora: " + hora).appendTo(article);
+          }
+          const $inicio = $('<p></p>').text('Lugar de inicio: ' + inicio).appendTo(article);
+          const $agencia = $('<p></p>').text('Agencia: ' + agencia).appendTo(article);
+          const $descripcion = $('<p></p>').text('Descripción: ' + descripcion).appendTo(article);
+          const personas = $(this).find('personas_adecuadas');
+          const $tPersona = $('<p></p>').text('Personas: ').appendTo(article);
+          const $list = $('<ul></ul>');
+          $(personas).find('persona').each(function(){
+            const $persona = $('<li></li>').text($(this).text()).appendTo($list);
+          });
+          $list.appendTo(article);
+          article.appendTo(section);
+          const $hitos = $('<article></article>');
+          const hitos = $(this).find('hitos');
+          $(hitos).find('hito').each(function(){
+            const nombreHito = $(this).attr('nombre');
+            const dist = $(this).find('distancia').text();
+            const rutaFoto = $(this).find('fotos').find('foto').attr('ref');
+            const $hito = $('<article></article>');
+            const $nombreHito = $('<h3></h3>').text("Hito: " + nombreHito).appendTo($hito);
+            const $distancia = $('<p></p>').text("Distancia del inicio: " + dist).appendTo($hito);
+            //const $icon = $('<img/>').attr('src',rutaFoto).appendTo($hito);
+            $hito.appendTo($hitos);
+          });
+          $hitos.appendTo(section);
+          section.appendTo('aside');
+        });
       };
 
       function adapt(text) {

@@ -20,6 +20,12 @@ section > article{
     padding: 0;
 }
 
+/*Especificidad 003*/
 section > article > h3{
     margin: 0.5em;
+}
+
+/*Especificidad 002*/
+section > h2{
+    width: 100%;
 }

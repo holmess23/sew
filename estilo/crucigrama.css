@@ -13,14 +13,17 @@ main{
     box-sizing: border-box;
 }
 @media screen and (max-width: 800px){
+    /*Especificidad 001*/
     main{
         width: 50%;
     }
+    /*Especificidad 011*/
     li[data-type = "ordenador"]{
         display:none
     }
 }
 @media screen and (max-width: 600px){
+    /*Especificidad 001*/
     main{
         width: 100%;
     }
@@ -57,10 +60,12 @@ main > p[data-state = "fail"]{
     background-color: rgb(246, 187, 187);
 }
 
+/*Especificidad 003*/
 section > ul > li{
     font-size: 120%;
 }
 
+/*Especificidad 003*/
 body > section > h3{
     font-size: 120%;
 }

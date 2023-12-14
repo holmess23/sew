@@ -9,10 +9,12 @@ header{
     width: 99%;
 }
 
+/*Especificidad 002*/
 header>h1{
     padding: 1%;
 }
 
+/*Especificidad 002*/
 header > nav{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -22,11 +24,8 @@ header > nav{
     gap: 1em;
 }
 
+/*Especificidad 003*/
 header > nav > a{
     padding: 0.5em;
-}
-
-/*Especificidad 003*/
-header>nav>a{
     color:#D4F1F4 !important;
 }

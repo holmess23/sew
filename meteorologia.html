@@ -33,7 +33,7 @@
         <a href="meteorologia.html" accesskey="m" tabindex="4">Meteorologia</a>
         <a href="noticias.html" accesskey="n" tabindex="5">Noticias</a>
         <a href="sobremi.html" accesskey="s" tabindex="5">Sobre mi</a>
-        <a href="viajes.html" accesskey="v" tabindex="7">Viajes</a>
+        <a href="viajes.php" accesskey="v" tabindex="7">Viajes</a>
     </nav>
     </header>
     <h2>Meteorologia</h2>
@@ -42,6 +42,7 @@
     </main>
     <script>
         const indonesia = new Pais("indonesia", "yakarta", 279476346, "República presidencialista","-6.195931602621414,106.81714032842201", "Islam");
+        indonesia.getPrimaryInfo();
         indonesia.getSecondaryInfo();
         indonesia.getMeteo();
     </script>

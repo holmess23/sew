@@ -41,6 +41,7 @@ section > article > img{
     transform: rotateY(180deg);
 }
 
+/*Especificidad 003*/
 section > article > h3{
     margin: 2em;
     position: static;

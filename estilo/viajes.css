@@ -1,9 +1,73 @@
+/*Sara Fernandez Gonzalez UO288195*/
+
+/*Especificidad 100*/
 #mapa{
     width: 20em;
     height: 20em;
 }
 
+/*Especificidad 100 100 100*/
 #kmlMap0, #kmlMap1, #kmlMap2{
     width: 20em;
     height: 20em;
 }
+
+/*Especificidad 001*/
+article {
+    width: 100%;
+    max-width: 100vh;
+    height: 70vh;
+    position: relative;
+    overflow: hidden; /* <===  */
+    border-radius: 1em;
+  }
+  
+  /*Especificidad 002*/
+  article h3 {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 0.5em;
+      font-size: 2em;
+  }
+  
+  /*Especificidad 001*/
+  img {
+    width: 100%;
+    max-width: 100vh;
+    height: 60vh;
+    position: absolute;
+    transition: all 0.5s;
+    object-fit: cover;
+    border-radius: 0.5em;
+  }
+  
+  /*Especificidad 001*/
+  button {
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    padding: 0.5em;
+    border: none;
+    border-radius: 50%;
+    z-index: 10;
+    cursor: pointer;
+    background-color: #fff;
+    font-size: 1em;
+  }
+
+  /*Especificidad 011*/
+  button:active {
+    transform: scale(1.1);
+  }
+  
+  /*Especificidad 011*/
+  button[data-action=prev] {
+    top: 50%;
+    left: 2%;
+  }
+  
+  /*Especificidad 011*/
+  button[data-action=next] {
+    top: 50%;
+    right: 2%;
+  }
