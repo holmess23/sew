@@ -112,9 +112,9 @@ class Moneda{
     </main>
     
     <aside>
-        <p>Introduce el XML</p>
+        <label for = "xmlInput">Introduce el XML: </label>
         <input id = "xmlInput" type = "file" onchange="viajes.readXMLFile(document.getElementById('xmlInput'))"/>
-        <p>Introduce los KML</p>
+        <label for = "kmlInput">Introduce los KML: </label>
         <input id = "kmlInput" type = "file" onchange = "viajes.readKMLFile(document.getElementById('kmlInput'))" multiple/>
         <article>
             <?php
