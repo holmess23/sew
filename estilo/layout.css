@@ -24,8 +24,14 @@ header > nav{
     gap: 1em;
 }
 
-/*Especificidad 003*/
-header > nav > a{
+/*Especificidad 013*/
+header > nav > a:visited{
     padding: 0.5em;
-    color:#D4F1F4 !important;
+    color:#D4F1F4;
+}
+
+/*Especificidad 013*/
+header > nav > a:link{
+    padding: 0.5em;
+    color:#9EDFE6;
 }
